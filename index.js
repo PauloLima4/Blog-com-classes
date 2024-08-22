@@ -1,16 +1,11 @@
-const Comment = require('./Comment')
+const Author = require('./Author')
 
-class Post {
-  constructor(title, content, author) {
-    this.title = title
-    this.content = content
-    this.author = author
-    this.comment = []
-  }
+const john = new Author('John Wick')
 
-  addComments(author, content) {
-    this.comment.push(new Comment(author, content))
-  }
-}
+const post = john.createPost('As crônicas de John Wick', 'bla bla bla bla')
 
-module.exports = Post
+post.addComments('Sopa', 'Eu amo as crônicas do cara aí')
+post.addComments('Alan', 'Eu odeio as crônicas desse cara muito feio!')
+
+console.log(john)
+console.log(post)
