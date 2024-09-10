@@ -1,14 +1,16 @@
+const Comment = require('./Comment')
+
 class Post {
-    constructor(author, title, content) {
-        this.author = author;
-        this.title = title;
-        this.content = content;
-        this.comments = [];
-    }
-    // Adição de comentários
-    addComment(comment) {
-        this.comments.push(comment);
-    }
+  constructor(title, content, author) {
+    this.title = title
+    this.content = content
+    this.author = author
+    this.comment = []
+  }
+
+  addComments(author, content) {
+    this.comment.push(new Comment(author, content))
+  }
 }
 
-module.exports = Post;
+module.exports = Post
